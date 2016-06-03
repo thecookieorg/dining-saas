@@ -1,0 +1,16 @@
+# views/devise/menu/_login_items.html.erb
+<% if restaurant_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_restaurant_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_restaurant_session_path)  %>  
+  </li>
+<% end %>
+
+<% if user_signed_in? %>
+	<%= link_to "Logout User", destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to "Login User", new_user_session_path %>
+<% end %>

@@ -1,0 +1,8 @@
+<% if current_page?(controller: 'locations', action: 'index') && user_signed_in? %>
+  <h1>These are our clients</h1>
+  <% @locations.each do |location| %>
+    <%= location.restaurant_name %>
+  <% end %>
+<% else %>
+  <%= render 'locations/manage_locations' %>
+<% end %>

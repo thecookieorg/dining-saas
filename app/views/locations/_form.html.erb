@@ -1,0 +1,15 @@
+<%= simple_form_for @location, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :restaurant_name %>
+  <%= f.input :restaurant_phone_number %>
+  <%= f.input :restaurant_address %>
+  <%= f.input :about %>
+  <%= f.input :contact_email %>
+  <%= f.input :website %>
+  <%= f.input :facebook %>
+  <%= f.input :instagram %>
+  <%= f.input :accept_takeout %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                locations_path, :class => 'btn btn-default' %>
+<% end %>
